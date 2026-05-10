@@ -31,6 +31,17 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    // ignoreHTTPSErrors: true,
+    // launchOptions: {
+    //   args: [
+    //     '--ssl-version-min=tls1', // Forces minimum TLS version down
+    //     '--cipher-suite-blacklist=0x0000', // Effectively clears the blacklist
+    //     '--ignore-certificate-errors',
+    //   ],
+    // },
+    headless: false,
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */

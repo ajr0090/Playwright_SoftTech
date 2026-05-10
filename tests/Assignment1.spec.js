@@ -41,17 +41,16 @@ test('New User Registration', async () => {
   await stateDropdown.selectOption({ label: 'MAHARASHTRA' });
 
   // District picklist value is not loaded for selected State picklist
-
+  const districtDropdown = page.locator(
+    "select[id='ctl00_ContentPlaceHolder1_ddlDistrict']",
+  );
+  districtDropdown.selectOption({ label: 'Nanded' });
   // ************** Trial 1 : wait for element **********************
 
   // await page
   //   .locator("select[id='ctl00_ContentPlaceHolder1_ddlDistrict']")
   //   .locator('option:has-text("Nanded")')
   //   .waitFor();
-  // await page
-  //   .locator("select[id='ctl00_ContentPlaceHolder1_ddlDistrict']")
-  //   .selectOption({ label: 'Nanded' });
-
   // ******************* Trial 2 : Use toPass to wait for the District to populate and select it ************************
 
   // const districtDropdown = page.locator(
